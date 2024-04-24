@@ -10,11 +10,16 @@ class SpeedException extends ConsoleProgram {
     distance = readInt("Enter the distance travelled: ");
     hours = readInt("Enter the hours elapsed: ");
 
-    // Calculate speed
-    speed = distance/hours;
-
-    // Output speed
-    System.out.println("The speed is " + speed);
+    try {
+      // Calculate speed
+      speed = distance/hours;
+  
+      // Output speed
+      System.out.println("The speed is " + speed);
+    }
+    catch (ArithmeticException e) {
+      System.out.println("Error detected:" + e.getMessage());
+    }
   }
   
 }
